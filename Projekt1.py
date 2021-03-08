@@ -10,14 +10,16 @@ class MessSpam:
         driver.find_element_by_xpath(xpath).click()
         return xpath
 
-    NazwaOsoby = input("Wpisz nazwę osoby: ")
+    Id = int(input("Wpisz id/nazwe: "))
+
+    url = f"https://www.messenger.com/t/{Id}"
 
     Tekst = input("Wpisz teskt: ")
 
     Ilosc = int(input("Wpisz ilosc: "))
 
-    if NazwaOsoby != "":
-        driver.get(Info.url)
+    if Id != "":
+        driver.get(url)
         buttons = driver.find_element_by_xpath("//button[text()='Akceptuj wszystkie']").click()
         time.sleep(0.5)
         driver.execute_script("window.scrollTo(0,600)")
@@ -25,8 +27,6 @@ class MessSpam:
         with open("email.txt", "r") as email_txt:
             lines1 = email_txt.readlines()
         for line1 in lines1:
-
-
 
             findByXpath('//*[@id="email"]')
             driver.find_element_by_xpath('//*[@id="email"]').send_keys(line1)
@@ -37,9 +37,8 @@ class MessSpam:
 
             findByXpath('//*[@id="pass"]')
             driver.find_element_by_xpath('//*[@id="pass"]').send_keys(line2)
-            findByXpath("//button[text()='Zaloguj się']")
+            findByXpath("//button[text()='Kontynuuj']")
             time.sleep(4)
-            findByXpath(f"//span[text()='{NazwaOsoby}']")
             for i in range(Ilosc):
                 if Ilosc != 0:
 
