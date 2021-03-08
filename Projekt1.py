@@ -28,8 +28,8 @@ class MessSpam:
         findByXpath("//button[text()='Zaloguj się']")
         time.sleep(4)
         findByXpath(f"//span[text()='{NazwaOsoby}']")
-        while True:
-            if Info.attempt <= Ilosc:
+        for i in range(Ilosc):
+            if Ilosc != 0:
 
                 Info.attempt += 1
                 print("Ilosc: ", Info.attempt)
@@ -38,4 +38,5 @@ class MessSpam:
                 time.sleep(1)
                 findByXpath('/html/body/div[1]/div/div[1]/div/div[2]/div/div/div[1]/div[1]/div[2]/div/div/div/div/div/div[1]/div[2]/div/div/div/div[2]/div/form/div/div[3]/span[2]/div')
             else:
+                print("Koniec!")
                 break
