@@ -1,7 +1,7 @@
 class Info:
     url = 'https://www.messenger.com/'
-    email = 'wiktoroses@gmail.com'
-    password = 'Bodzio&789076599'
+    email = 'twoj email'
+    password = 'Twoje hasło'
     attempt = 0
 
 w = Info()
