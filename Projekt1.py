@@ -12,6 +12,8 @@ class MessSpam:
 
     NazwaOsoby = input("Wpisz nazwę osoby: ")
 
+    Tekst = input("Wpisz teskt: ")
+
     if NazwaOsoby != "":
         driver.get(Info.url)
         buttons = driver.find_element_by_xpath("//button[text()='Akceptuj wszystkie']").click()
@@ -30,7 +32,7 @@ class MessSpam:
                 print("Ilosc: ", Info.attempt)
 
                 text_field = driver.find_element_by_css_selector('.notranslate')
-                text_field.send_keys(Info.text)
+                text_field.send_keys(Tekst)
                 time.sleep(1)
                 findByXpath('/html/body/div[1]/div/div[1]/div/div[2]/div/div/div[1]/div[1]/div[2]/div/div/div/div/div/div[1]/div[2]/div/div/div/div[2]/div/form/div/div[3]/span[2]/div')
             else:
